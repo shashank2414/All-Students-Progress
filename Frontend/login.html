@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftFood - Login</title>
+    <link rel="stylesheet" href="login-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <h1 class="game-logo">SwiftFood</h1>
+                <p class="tagline">Level Up Your Food Journey</p>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Start Cooking!</span>
+                    <span class="btn-icon">🍳</span>
+                </button>
+            </form>
+            
+            <div class="register-section">
+                <p>New to SwiftFood?</p>
+                <button class="register-btn" onclick="showRegisterForm()">Create Account</button>
+            </div>
+            
+            <div class="guest-section">
+                <p>Or</p>
+                <button class="guest-btn" onclick="loginAsGuest()">Play as Guest</button>
+            </div>
+        </div>
+        
+        <!-- Register Form (Hidden by default) -->
+        <div class="register-card" id="registerCard" style="display: none;">
+            <div class="logo-section">
+                <h1 class="game-logo">Join SwiftFood</h1>
+                <p class="tagline">Begin Your Culinary Adventure</p>
+            </div>
+            
+            <form class="register-form" id="registerForm">
+                <div class="input-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" name="regUsername" required placeholder="Choose a username">
+                </div>
+                
+                <div class="input-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" name="regEmail" required placeholder="Enter your email">
+                </div>
+                
+                <div class="input-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="regPassword" required placeholder="Create a password">
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                
+                <button type="submit" class="register-submit-btn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="btn-icon">🎯</span>
+                </button>
+            </form>
+            
+            <div class="back-to-login">
+                <button class="back-btn" onclick="showLoginForm()">← Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html> 

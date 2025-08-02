@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftFood - Level Up Your Food Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="logo">
+                <h1>SwiftFood</h1>
+                <span class="subtitle">Level Up Your Food Journey</span>
+            </div>
+            <div class="player-stats">
+                <div class="stat">
+                    <span class="stat-label">Level</span>
+                    <span class="stat-value" id="player-level">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">XP</span>
+                    <span class="stat-value" id="player-xp">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Coins</span>
+                    <span class="stat-value" id="player-coins">100</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <!-- Level Selection -->
+            <section class="level-selection" id="level-selection">
+                <h2>Choose Your Mission</h2>
+                <div class="levels-grid">
+                    <div class="level-card" data-level="1">
+                        <div class="level-icon">🍕</div>
+                        <h3>Level 1: Pizza Master</h3>
+                        <p>Learn the basics of pizza making</p>
+                        <div class="level-status unlocked">UNLOCKED</div>
+                    </div>
+                    <div class="level-card" data-level="2">
+                        <div class="level-icon">🍔</div>
+                        <h3>Level 2: Burger Builder</h3>
+                        <p>Master the art of burger creation</p>
+                        <div class="level-status locked">LOCKED</div>
+                    </div>
+                    <div class="level-card" data-level="3">
+                        <div class="level-icon">🍜</div>
+                        <h3>Level 3: Noodle Ninja</h3>
+                        <p>Become a noodle preparation expert</p>
+                        <div class="level-status locked">LOCKED</div>
+                    </div>
+                    <div class="level-card" data-level="4">
+                        <div class="level-icon">🍰</div>
+                        <h3>Level 4: Dessert Wizard</h3>
+                        <p>Create sweet masterpieces</p>
+                        <div class="level-status locked">LOCKED</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Level -->
+            <section class="active-level" id="active-level" style="display: none;">
+                <div class="level-header">
+                    <button class="back-btn" onclick="showLevelSelection()">← Back to Levels</button>
+                    <h2 id="current-level-title">Level 1: Pizza Master</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="level-progress"></div>
+                    </div>
+                </div>
+
+                <div class="level-content">
+                    <div class="task-area">
+                        <h3>Current Task</h3>
+                        <div class="task-card" id="current-task">
+                            <div class="task-icon">🍕</div>
+                            <div class="task-info">
+                                <h4 id="task-title">Prepare Pizza Dough</h4>
+                                <p id="task-description">Mix flour, water, and yeast to create the perfect pizza base</p>
+                            </div>
+                            <button class="complete-btn" onclick="completeTask()">Complete Task</button>
+                        </div>
+                    </div>
+
+                    <div class="achievements">
+                        <h3>Achievements</h3>
+                        <div class="achievement-list" id="achievement-list">
+                            <div class="achievement unlocked">
+                                <span class="achievement-icon">✅</span>
+                                <span class="achievement-text">First Steps</span>
+                            </div>
+                            <div class="achievement locked">
+                                <span class="achievement-icon">🔒</span>
+                                <span class="achievement-text">Pizza Pro</span>
+                            </div>
+                            <div class="achievement locked">
+                                <span class="achievement-icon">🔒</span>
+                                <span class="achievement-text">Speed Chef</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Level Complete Modal -->
+            <div class="modal" id="level-complete-modal">
+                <div class="modal-content">
+                    <div class="level-complete">
+                        <h2>🎉 Level Complete! 🎉</h2>
+                        <div class="rewards">
+                            <div class="reward">
+                                <span class="reward-icon">⭐</span>
+                                <span class="reward-text">+50 XP</span>
+                            </div>
+                            <div class="reward">
+                                <span class="reward-icon">🪙</span>
+                                <span class="reward-text">+25 Coins</span>
+                            </div>
+                            <div class="reward">
+                                <span class="reward-icon">🏆</span>
+                                <span class="reward-text">New Achievement!</span>
+                            </div>
+                        </div>
+                        <button class="next-level-btn" onclick="nextLevel()">Next Level</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <div class="footer-content">
+                <p>&copy; 2024 SwiftFood - Level Up Your Food Journey</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
